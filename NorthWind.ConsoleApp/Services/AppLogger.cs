@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NorthWind.ConsoleApp.Services
 {
-    public class AppLogger (IUserActionWriter writer)
+    internal class AppLogger (IUserActionWriter writer)
     {
         public void WriteLog(string message)
         {
