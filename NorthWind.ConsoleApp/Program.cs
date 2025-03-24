@@ -1,11 +1,4 @@
-﻿
-using Microsoft.Extensions.Hosting;
-using NorthWind.ConsoleApp.Services;
-using NorthWind.Entities.Interfaces;
-using NorthWind.Writers;
-using Microsoft.Extensions.DependencyInjection;
-
-// 1. PROCESO DE PREPARACIÓN, SE LE DICE CUÁLES SON LOS SERVICIOS QUE VAMOS A USAR
+﻿// 1. PROCESO DE PREPARACIÓN, SE LE DICE CUÁLES SON LOS SERVICIOS QUE VAMOS A USAR
 // creame un application builder para manejar las dependencias por mi.
 HostApplicationBuilder Builder = Host.CreateApplicationBuilder();
 
