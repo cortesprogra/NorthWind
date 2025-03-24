@@ -1,0 +1,9 @@
+﻿Como auditor de la empresa necesitoq eu la aplicación registre las distintas acciones que los usuarios realizan en la aplicación para poder tener un histórico de actividades.
+
+Clase con:
+	usuario
+	fecha-hora
+	descripción
+
+método:
+	vpod Log(usuario, fecha-hora, descripcion)
