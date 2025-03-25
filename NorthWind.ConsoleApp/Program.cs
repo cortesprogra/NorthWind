@@ -4,12 +4,9 @@ using Microsoft.Extensions.Dependency.Injection;
 
 HostApplicationBuilder Builder = Host.CreateApplicationBuilder();
 
-// Cuando te pida un Logger dame un ConsoleLogger (por ejemplo).
-//Builder.Services.AddSingleton<IUserActionWriter, ConsoleWriter>();
-//Builder.Services.AddSingleton<IUserActionWriter, DebugWriter>();
-// Ahora usando el método de extensión
-Builder.Services.AddConsoleWriter();
-Builder.Services.AddDebugWriter();
+// Ahora se agregan todos los servicios registrados para mi aplicación.
+Builder.Services.AddNorthWindServices();
+
 // Cuando te pida una instancia de AppLogger, devuelve una instancia de él mismo (no tiene abstracción).
 Builder.Services.AddSingleton<AppLogger>();
 Builder.Services.AddSingleton<ProductService>();
