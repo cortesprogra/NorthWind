@@ -1,24 +1,19 @@
 ﻿// 1. PROCESO DE PREPARACIÓN, SE LE DICE CUÁLES SON LOS SERVICIOS QUE VAMOS A USAR
 // creame un application builder para manejar las dependencias por mi.
-using Microsoft.Extensions.Dependency.Injection;
 
 HostApplicationBuilder Builder = Host.CreateApplicationBuilder();
 
 // Ahora se agregan todos los servicios registrados para mi aplicación.
 Builder.Services.AddNorthWindServices();
 
-// Cuando te pida una instancia de AppLogger, devuelve una instancia de él mismo (no tiene abstracción).
-Builder.Services.AddSingleton<AppLogger>();
-Builder.Services.AddSingleton<ProductService>();
-
 // Ahora sí, construye el Host de la aplicación.
 using IHost AppHost = Builder.Build();
 
 // 2. CONSUMIR LOS SERVICIOS ANTES INDICADOS
-AppLogger Logger = AppHost.Services.GetRequiredService<AppLogger>();
+IAppLogger Logger = AppHost.Services.GetRequiredService<IAppLogger>();
 Logger.WriteLog("Application started.");
 
-ProductService Product = AppHost.Services.GetRequiredService<ProductService>();
+IProductService Product = AppHost.Services.GetRequiredService<IProductService>();
 Product.Add("Demo", "Azúcar refinada.");
 
 /*

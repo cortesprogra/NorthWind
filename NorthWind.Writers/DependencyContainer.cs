@@ -1,9 +1,7 @@
-﻿
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using NorthWind.Entities.Interfaces;
-using NorthWind.Writers;
 
-namespace Microsoft.Extensions.Dependency.Injection;
+namespace NorthWind.Writers;
 
 // La idea de crear esta clase es para decir: yo soy el implementador, nadie tien que saber qué es lo que hago.
 public static class DependencyContainer
