@@ -1,9 +1,15 @@
 ﻿// 1. PROCESO DE PREPARACIÓN, SE LE DICE CUÁLES SON LOS SERVICIOS QUE VAMOS A USAR
 // creame un application builder para manejar las dependencias por mi.
+using Microsoft.Extensions.Dependency.Injection;
+
 HostApplicationBuilder Builder = Host.CreateApplicationBuilder();
 
 // Cuando te pida un Logger dame un ConsoleLogger (por ejemplo).
-Builder.Services.AddSingleton<IUserActionWriter, FileWriter>();
+//Builder.Services.AddSingleton<IUserActionWriter, ConsoleWriter>();
+//Builder.Services.AddSingleton<IUserActionWriter, DebugWriter>();
+// Ahora usando el método de extensión
+Builder.Services.AddConsoleWriter();
+Builder.Services.AddDebugWriter();
 // Cuando te pida una instancia de AppLogger, devuelve una instancia de él mismo (no tiene abstracción).
 Builder.Services.AddSingleton<AppLogger>();
 Builder.Services.AddSingleton<ProductService>();
